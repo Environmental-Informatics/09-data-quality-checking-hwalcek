@@ -126,6 +126,7 @@ def Check03_TmaxTminSwapped( DataDF, ReplacedValuesDF ):
     DataDF.loc[ixs, cols] = DataDF.loc[ixs, cols].reindex(columns=cols[::-1]).values
     total = ixs[ixs].index #where ixs is True
     ReplacedValuesDF.loc["3. Swapped",["Max Temp", "Min Temp"]] = len(total)
+    ReplacedValuesDF.loc["3. Swapped",["Precip", "Wind Speed"]] = 0
     
     return( DataDF, ReplacedValuesDF )
     
